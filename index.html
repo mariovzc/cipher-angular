@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app" class="container" ng-app="myApp" ng-controller="AppController as app">
+            <h1 class="text-center">Cifrado</h1>
+            <form ng-submit="app.submit()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="value">Palabra</label>
+                            <input type="text" class="form-control" replace="[^a-zA-Z ]" with="" ng-model="app.word" id="value" required ng-pattern-restrict>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="code">Codígo:</label>
+                                    <input type="number" class="form-control" ng-pattern="/[0-9A-F:]+/g" ng-model="app.code" id="code">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="type">Acción</label>
+                                    <select id="type" name= "type" class= "form-control" ng-model="app.type">
+                                        <option value="Cifrar">Cifrar</option>
+                                        <option value="Descifrar">Descifrar</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button id="submit-button" type="submit" class="btn btn-primary">{{app.type}}</button>
+                    <button id="submit-button" ng-click="app.clean()" class="btn btn-info">Limpiar</button>
+                </div><br />
+            </form>            
+            <div class="animate-show-hide" ng-show="app.show">
+                <div class="card text-center">
+                    <h3 class="card-header">Resultado</h3>
+                    <div class="card-block">
+                        <h4 class="card-title">{{app.result}}</h4>
+                        <p class="card-text" ng-hide="app.valid"><span>¿Es la Palabra Correcta?</span></p>
+                        <button ng-click="app.validWord()" ng-hide="app.valid" type="button" class="btn btn-success">Si</button>
+                        <button ng-click="app.wrongWord()" ng-hide="app.valid" class="btn btn-danger">No</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    <script src="js/angular.js"></script>
+    <script src="js/cipher.js"></script>
+    <script src="js/app.js"></script>
+    </body>
+</html>
