@@ -15,7 +15,8 @@ var app = angular.module('myApp', [])
     this.convertWord();
   };
   this.convertWord = function(){
-    word = "";
+    if (this.code > 26){ alert("No puede pasar de 26"); return;}
+    let word = "";
     switch(this.type) {
       case "Cifrar":
           word = cipher.encodeWord(this.word.toUpperCase(), this.code); 
@@ -50,8 +51,8 @@ app.directive('replace', function() {
     link: function(scope, element, attrs, model) {
       model.$parsers.push(function(val) {
         if (!val) { return; }
-        var regex = new RegExp(scope.regex);
-        var replaced = val.replace(regex, scope.with); 
+        let regex = new RegExp(scope.regex);
+        let replaced = val.replace(regex, scope.with); 
         if (replaced !== val) {
           model.$setViewValue(replaced);
           model.$render();
