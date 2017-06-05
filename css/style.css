@@ -6,3 +6,10 @@
 .animate-show-hide.ng-hide-remove {
   transition: all linear 0.5s;
 }
+
+.zoomIn {
+  -webkit-animation: zoomIn 0.3s; /* Safari 4+ */
+  -moz-animation:    zoomIn 0.3s; /* Fx 5+ */
+  -o-animation:      zoomIn 0.3s; /* Opera 12+ */
+  animation:         zoomIn 0.3s; /* IE 10+, Fx 29+ */
+}
