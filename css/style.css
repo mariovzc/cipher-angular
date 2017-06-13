@@ -13,3 +13,21 @@
   -o-animation:      zoomIn 0.3s; /* Opera 12+ */
   animation:         zoomIn 0.3s; /* IE 10+, Fx 29+ */
 }
+
+body{
+	 background: url(http://www.timurtek.com/wp-content/uploads/2014/10/form-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family:'HelveticaNeue','Arial', sans-serif;
+
+}
+#app{
+  margin-top: 1px;
+  padding-bottom: 10px;
+  background-color: whitesmoke;
+}
+.title{
+  color: #566375;
+}

@@ -10,16 +10,16 @@
     </head>
     <body>
         <div id="app" class="container" ng-app="myApp" ng-controller="AppController as app">
-            <h1 class="text-center">Cifrado</h1>
+            <h1 class="text-center title">Cifrado</h1>
             <form ng-submit="app.submit()">
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label for="value">Palabra</label>
                             <input type="text" class="form-control" replace="[^a-zA-Z ]" with="" ng-model="app.word" id="value" required ng-pattern-restrict>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
